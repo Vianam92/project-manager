@@ -15,10 +15,11 @@ export async function signUpController(
   if (!errors.isEmpty()) {
     return next(errors.array());
   }
-  const { email, password, role } = req.body;
+  const {username, email, password, role } = req.body;
 
   const signUpRequest: SignUpInput = {
     email,
+    username,
     password,
     role,
   };

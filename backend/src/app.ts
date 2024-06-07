@@ -5,7 +5,8 @@ import cors from 'cors';
 import express from 'express';
 import { AuthRouter } from './infrastructure/routes/auth.routes';
 import { UserRepositoryPg } from './infrastructure/repositories/user.repository';
-import Container from 'typedi';
+import { Container } from 'typedi';
+
 Container.set('user-repository', new UserRepositoryPg());
 
 const app = express();

@@ -8,7 +8,6 @@ import { PasswordMissmatchException } from "../exceptions/password-missmatch.exc
 import { UserRepository } from "../repositories/user.repository";
 
 @Service()
-
 export class UserService{
     constructor(@Inject("user-repository") private repository: UserRepository){}
 
@@ -17,6 +16,7 @@ export class UserService{
         const hashedPassword = await bcrypt.hash(user.password.value, salt);
         const newUser: User = new User({
           id: user.id,
+          username: user.username,
           email: user.email,
           password: PasswordVO.createFromHash(hashedPassword),
           role: user.role,

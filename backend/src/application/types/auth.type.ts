@@ -10,6 +10,7 @@ export type SignInInput = {
   
   export type SignUpInput = {
     email: string;
+    username: string;
     password: string;
     role: "member";
   };
